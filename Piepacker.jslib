@@ -23,6 +23,14 @@ mergeInto(LibraryManager.library, {
     return buffer;
   },
 
+  ConnectionHost: function () {
+    var returnStr = window.sessionStorage.getItem("connectionHost");
+    var bufferSize = lengthBytesUTF8(returnStr) + 1;
+    var buffer = _malloc(bufferSize);
+    stringToUTF8(returnStr, buffer, bufferSize);
+    return buffer;
+  },
+
   PlayerIdx: function () {
     return parseInt(window.sessionStorage.getItem("playerIdx"));
   },
