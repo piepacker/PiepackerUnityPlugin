@@ -15,6 +15,14 @@ mergeInto(LibraryManager.library, {
     return buffer;
   },
 
+  UserID: function () {
+    var returnStr = window.sessionStorage.getItem("userID");
+    var bufferSize = lengthBytesUTF8(returnStr) + 1;
+    var buffer = _malloc(bufferSize);
+    stringToUTF8(returnStr, buffer, bufferSize);
+    return buffer;
+  },
+
   ClusterName: function () {
     var returnStr = window.sessionStorage.getItem("clusterName");
     var bufferSize = lengthBytesUTF8(returnStr) + 1;
