@@ -28,6 +28,9 @@ namespace PiepackerSDK
 
         [DllImport("__Internal")]
         public static extern string ConnectionHost();
+
+        [DllImport("__Internal")]
+        public static extern string DisplayName();
     }
 }
 ```

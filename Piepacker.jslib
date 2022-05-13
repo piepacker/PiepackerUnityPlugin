@@ -31,6 +31,14 @@ mergeInto(LibraryManager.library, {
     return buffer;
   },
 
+  DisplayName: function () {
+    var returnStr = window.sessionStorage.getItem("displayName");
+    var bufferSize = lengthBytesUTF8(returnStr) + 1;
+    var buffer = _malloc(bufferSize);
+    stringToUTF8(returnStr, buffer, bufferSize);
+    return buffer;
+  },
+
   PlayerIdx: function () {
     return parseInt(window.sessionStorage.getItem("playerIdx"));
   },
