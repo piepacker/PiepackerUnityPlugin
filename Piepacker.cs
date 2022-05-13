@@ -11,6 +11,9 @@ namespace PiepackerSDK
         public static extern string UserSessionID(); //use in connection call with param userSessionId
 
         [DllImport("__Internal")]
+        public static extern string UserID();
+
+        [DllImport("__Internal")]
         public static extern int PlayerIdx();
         
         [DllImport("__Internal")]
